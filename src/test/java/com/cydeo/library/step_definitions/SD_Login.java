@@ -1,9 +1,8 @@
 package com.cydeo.library.step_definitions;
 
-import com.cydeo.library.pages.HomePage;
+import com.cydeo.library.pages.BasePage;
 import com.cydeo.library.pages.LoginPage;
 import com.cydeo.library.utilities.BrowserUtils;
-import com.cydeo.library.utilities.Driver;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
@@ -11,7 +10,7 @@ import org.junit.Assert;
 public class SD_Login {
 
     LoginPage loginPage = new LoginPage();
-    HomePage homePage = new HomePage();
+    BasePage basePage = new BasePage();
 
     @When("user enters librarian username {string}")
     public void user_enters_librarian_username(String username) {
@@ -45,9 +44,9 @@ public class SD_Login {
 //        System.out.println("-----------------------");
 //        System.out.println(homePage.dashboardIcon.getAttribute("textContent"));
 
-        BrowserUtils.highlight(homePage.dashboardIcon);
+        BrowserUtils.highlight(basePage.dashboardIcon);
 
-        Assert.assertEquals("Dashboard", homePage.dashboardIcon.getText());
+        Assert.assertEquals("Dashboard", basePage.dashboardIcon.getText());
 
     }
 

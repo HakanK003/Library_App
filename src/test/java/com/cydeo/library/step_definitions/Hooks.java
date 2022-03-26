@@ -8,7 +8,7 @@ import io.cucumber.java.Before;
 
 public class Hooks {
 
-    @Before (value = "@login")
+    @Before
     public void setUpForLogin(){
 
         Driver.getDriver().get( ConfigurationReader.getProperty("env") );
