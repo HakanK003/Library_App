@@ -20,8 +20,8 @@ public class BasePage {
     @FindBy(css = "a[href='#books']")
     public WebElement booksTab;
 
-    @FindBy(css = "a[class='nav-link dropdown-toggle']")
-    public WebElement profileTab;
+    @FindBy(xpath = "//ul[contains(@class ,'navbar-right')]//span")
+    public WebElement usernameSectionName;
 
 
 }
