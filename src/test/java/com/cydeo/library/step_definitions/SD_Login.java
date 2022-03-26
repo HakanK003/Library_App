@@ -6,6 +6,7 @@ import com.cydeo.library.utilities.BrowserUtils;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
+import org.openqa.selenium.NoSuchElementException;
 
 public class SD_Login {
 
@@ -43,6 +44,14 @@ public class SD_Login {
 //        System.out.println(homePage.dashboardIcon.getText());
 //        System.out.println("-----------------------");
 //        System.out.println(homePage.dashboardIcon.getAttribute("textContent"));
+
+
+        try {
+            basePage.dashboardIcon.isDisplayed();
+        } catch (NoSuchElementException e) {
+            Assert.fail("Dashboard Link is Not presented");
+//            System.out.println("Failed");
+        }
 
         BrowserUtils.highlight(basePage.dashboardIcon);
 
